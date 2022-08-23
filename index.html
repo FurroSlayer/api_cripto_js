@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotizador de criptomonedas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/bitcoinfav.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body onload="cryptoOptions()">
+    <section class="container">
+      <div class="container__box">
+        <h1>
+          Cotizacion de criptomonedas <br />
+          en tiempo real
+        </h1>
+        <form class="box__form">
+          <label class="form__label">Elige una moneda</label>
+          <select onChange="quote()" id="currency">
+            <option value="">Selecciona</option>
+            <option value="USD">Dolar USA</option>
+            <option value="EUR">Euro</option>
+            <option value="GBP">Libra Esterlina</option>
+            <option value="COP">Peso chileno</option>
+          </select>
+          <label class="form__label">Elige una cryptomoneda</label>
+          <select onChange="quote()" id="cryptocurrency"></select>
+          <button
+            class="form__button"
+            type="button"
+            onclick="quoteCurrency()"
+            id="myButton"
+          >
+            Calcular
+          </button>
+          <div id="form__error"></div>
+        </form>
+        <div class="results" id="divResults"></div>
+      </div>
+    </section>
+  </body>
+</html>
